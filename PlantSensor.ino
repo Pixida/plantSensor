@@ -84,7 +84,6 @@ void setup() {
   /*** Go to sleep mode */
 
   ESP.deepSleep(SLEEP_TIME_S * 1000000);
-  // WiFi.disconnect();
   
 }
 
