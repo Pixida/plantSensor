@@ -61,13 +61,14 @@ void setup() {
     Serial.print("Temperature: ");
     Serial.println(temp);
   } while (temp == 85.0 || temp == (-127.0));
+  
+  root["humidity"] = val;
+  root["temperature"] = temp;
 
   root.printTo(buf, JSON_OUTPUT_BUFFER_LEN);
 
-  /*** Send sensor data */
-
-  root["hello"] = 12;
-  root["world"] = 12.3;
+  /*** Send sensor data ** */
+  
   iotClient.setAWSRegion("eu-west-1");
   iotClient.setAWSEndpoint("amazonaws.com");
   iotClient.setAWSDomain(endpoint);
